@@ -32,7 +32,7 @@ $(".menuButton").hover(
 		//$( ".menubutton" ).css("visibility","hidden");
 		//$(this).css("animation" , "transition alternate 5s");
 
-		$(this).css("-webkit-animation", "transition 10000s");
+		$(this).css("-webkit-animation", "transition 10000000s");
 	$(this).css("-webkit-animation-play-state", "running");
      setTimeout(function() { 
      	console.log("da");

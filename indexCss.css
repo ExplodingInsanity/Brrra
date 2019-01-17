@@ -65,7 +65,7 @@ svg{
   0%{
   	clip-path: circle(50px);
   }
-  0.01%{
+  0.00001%{
   	clip-path: circle(100%);
   }
   100%{
