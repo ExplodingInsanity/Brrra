@@ -11,23 +11,58 @@ document.getElementById("polyLeft").setAttribute("points", "0, 0 " + width/2 + "
 document.getElementById("polyRight").setAttribute("points", width + ", 0 " + width/2 + " " + height/2 + ", " + width + " ," + height);
 document.getElementById("polyDown").setAttribute("points", "0, " + height + " , " + width/2 + " " + height/2 + ", " + width + " , " + height);
 
-var a = document.getElementById("middle").height;
-console.log(a);
 $("#middle").css("top",height/2 - document.getElementById("middle").height/2);
 $("#middle").css("left",width/2 - document.getElementById("middle").width/2);
 
+
+var hovered;
 var before;
+var happening = false;
 $(".menuButton").hover(
     function(event) {
+    	if($(this)==hovered) return;
+    	if(happening) return;
+    	console.log("happened!")
+    	hovered = this;
         // The mouse has entered the element, can reference the element via 'this'
-        $(".menubutton").css("visibility","hidden");
-        before = $(this).css("visibility","visible");
         before = $(this).css("clip-path");
-        $(this).css("clip-path","none");
+
+        $( ".menubutton" ).each(function( index ) {if(this != hovered) $(this).css("visibility","hidden");});
+		happening = true;
+		//$( ".menubutton" ).css("visibility","hidden");
+		//$(this).css("animation" , "transition alternate 5s");
+
+		$(this).css("-webkit-animation", "transition 10000s");
+	$(this).css("-webkit-animation-play-state", "running");
+     setTimeout(function() { 
+     	console.log("da");
+     	$(this).css("clip-path","circle(100%)");
+     	happening = false;
+     }, 1000);
+
+        //$(this).css("clip-path","none");
     },
     function (event) {
+    	//if(happening == true) return;
+    	
+    }
+ );
+
+$("#middle").hover(
+    function(event) {
+    	// The mouse has entered the element, can reference the element via 'this'
+    	$(hovered).css("-webkit-animation", "none");
+    	$("#eastCoast").css("clip-path", "url(#clippingRight)");
+    	$("#westSide").css("clip-path", "url(#clippingLeft)");
+    	$("#trap").css("clip-path", "url(#clippingUp)");
+    	$("#dj").css("clip-path", "url(#clippingDown)");
+    	console.log("LOST HOVER");
         // The mouse has left the element, can reference the element via 'this'
-        $(".menubutton").css("visibility","visible");
-        $(this).css("clip-path", before);
+        $( ".menubutton" ).css("visibility","visible");
+		happening = false;
+    },
+    function (event) {
+    	// The mouse has left the element, can reference the element via 'this'
+
     }
  );

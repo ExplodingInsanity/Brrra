@@ -12,24 +12,27 @@ svg{
 	padding: 0px;
 }
 
+.menuButton{
+	position:absolute;
+  -webkit-animation-play-state: paused;
+  animation-fill-mode: forwards;
+}
+
 #eastCoast{
 	clip-path: url(#clippingRight);
-	position:absolute;
 }
 
 #westSide{
 	clip-path: url(#clippingLeft);
-	position: absolute;
 }
 
 #trap{
 	clip-path: url(#clippingUp);
-	position: absolute;
+
 }
 
 #dj{
 	clip-path: url(#clippingDown);
-	position: absolute;
 }
 #middle{
   position: absolute; /* or absolute */
@@ -46,13 +49,28 @@ svg{
 	#dj.visibility: hidden;
 }
 
-#trap:hover{
-	clip-path: none;
-	#dj.visibility: hidden;
-}
 
 #dj:hover{
 	clip-path:none;
 	#dj.visibility: hidden;
 }
+
+#trap:hover{
+	clip-path: none;	
+}
 */
+
+@keyframes transition{
+
+  0%{
+  	clip-path: circle(50px);
+  }
+  0.01%{
+  	clip-path: circle(100%);
+  }
+  100%{
+    /*clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0 100%);*/
+    clip-path: circle(100%);
+  }
+
+}
