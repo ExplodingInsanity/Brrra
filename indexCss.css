@@ -8,6 +8,51 @@ svg{
 }
 
 .theSVG{
-		margin: 0px;
+	margin: 0px;
 	padding: 0px;
 }
+
+#eastCoast{
+	clip-path: url(#clippingRight);
+	position:absolute;
+}
+
+#westSide{
+	clip-path: url(#clippingLeft);
+	position: absolute;
+}
+
+#trap{
+	clip-path: url(#clippingUp);
+	position: absolute;
+}
+
+#dj{
+	clip-path: url(#clippingDown);
+	position: absolute;
+}
+#middle{
+  position: absolute; /* or absolute */
+}
+
+/*
+#eastCoast:hover{
+	clip-path: none;
+	#dj.visibility: hidden;
+}
+
+#westSide:hover{
+	clip-path: none;
+	#dj.visibility: hidden;
+}
+
+#trap:hover{
+	clip-path: none;
+	#dj.visibility: hidden;
+}
+
+#dj:hover{
+	clip-path:none;
+	#dj.visibility: hidden;
+}
+*/

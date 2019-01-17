@@ -1,17 +1,32 @@
 <html>
 <head>
+	 <meta charset="UTF-8"> 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel = "stylesheet" type = "text/css" href = "indexCSS.css" /></head>
 
 	<title>Atestat</title>
- <link rel = "stylesheet" type = "text/css" href = "indexCSS.css" /></head>
-<body bgcolor="cyan">
+<body bgcolor="black">
+	
+		<img src="east-coast.jpg" width="100%" height="100%" id="eastCoast" class="menuButton">
+		<img src="west-side.jpg" width="100%" height="100%" id="westSide" class="menuButton">
+		<img src="trap.jpg" width="100%" height="100%" id="trap" class="menuButton">
+		<img src="dj.png" width="100%" height="100%" id="dj" class="menuButton">
+		<img src="middle.png" id="middle" width="100" height="100">
+	
+
 <svg height="100%" width="100%" id="theSVG">
-		<a href="">
+	<clipPath id="clippingUp">
 	<polygon id="polyUp" points="0,0 50,100 100, 0" style="fill:cyan;stroke:purple;stroke-width:1" />
-	</a>
+	</clipPath>
+	<clipPath id="clippingRight">
 	<polygon id="polyRight" points="0,0 50,100 100, 0" style="fill:red;stroke:purple;stroke-width:1" />
+		</clipPath>
+	<clipPath id="clippingDown">
 	<polygon id="polyDown" points="0,0 50,100 100, 0" style="fill:lime;stroke:purple;stroke-width:1" />
+		</clipPath>
+	<clipPath id="clippingLeft">
 	<polygon id="polyLeft" points="0,0 50,100 100, 0" style="fill:white;stroke:purple;stroke-width:1" />
+		</clipPath>
 </svg>
 <script src="indexScript.js"></script>
 </body>
