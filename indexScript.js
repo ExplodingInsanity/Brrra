@@ -20,6 +20,7 @@ var before;
 var happening = false;
 $(".menuButton").hover(
     function(event) {
+    	$(".info").css("visibility","visible");
     	if($(this)==hovered) return;
     	if(happening) return;
     	console.log("happened!")
@@ -60,9 +61,46 @@ $("#middle").hover(
         // The mouse has left the element, can reference the element via 'this'
         $( ".menubutton" ).css("visibility","visible");
 		happening = false;
+		$(".info").css("visibility","hidden");
     },
     function (event) {
     	// The mouse has left the element, can reference the element via 'this'
 
     }
+ );
+
+$("#dj").hover(
+    function(event) {
+    	// The mouse has entered the element, can reference the element via 'this'
+    	$("#title").html("DJ");
+    },
+    function (event) {// The mouse has left the element, can reference the element via 'this' 
+	}
+ );
+
+$("#westSide").hover(
+    function(event) {
+    	// The mouse has entered the element, can reference the element via 'this'
+    	$("#title").html("West Side");
+    },
+    function (event) {// The mouse has left the element, can reference the element via 'this' 
+	}
+ );
+
+$("#eastCoast").hover(
+    function(event) {
+    	// The mouse has entered the element, can reference the element via 'this'
+    	$("#title").html("East Coast");
+    },
+    function (event) {// The mouse has left the element, can reference the element via 'this' 
+	}
+ );
+
+$("#trap").hover(
+    function(event) {
+    	// The mouse has entered the element, can reference the element via 'this'
+    	$("#title").html("Trap");
+    },
+    function (event) {// The mouse has left the element, can reference the element via 'this' 
+	}
  );
