@@ -2,8 +2,3 @@ body{
 	margin: 0px;
 	padding: 0px;
 }
-
-#home:hover{
-	content: url("../media/dj.png");
-
-}
