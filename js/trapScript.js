@@ -7,8 +7,8 @@ document.getElementById("home").height = logoHeight;
 $("#home").css("left",width/2 - document.getElementById("home").width/2);
 
 $("#home").hover(function(){
-  this.setAttribute('src','../media/Logo3.png');
+  this.setAttribute('src','../media/logo3.png');
   console.log("Fire");
   }, function(){
-  this.setAttribute('src','../media/Logo.png');
+  this.setAttribute('src','../media/logo.png');
 });
