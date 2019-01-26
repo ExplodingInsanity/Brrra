@@ -1,19 +1,5 @@
 console.log("Setting polygons");
-
-var height = $("#theSVG").height();
-var width = $("#theSVG").width();
-document.getElementById("theSVG").setAttribute("width", width);
-document.getElementById("theSVG").setAttribute("height", height);
-console.log(height + "x" + width);
-
-document.getElementById("polyUp").setAttribute("points", "0, 0 " + width/2 + " " + height/2 + ", " + width + " ,0");
-document.getElementById("polyLeft").setAttribute("points", "0, 0 " + width/2 + " " + height/2 + ", 0 ," + height);
-document.getElementById("polyRight").setAttribute("points", width + ", 0 " + width/2 + " " + height/2 + ", " + width + " ," + height);
-document.getElementById("polyDown").setAttribute("points", "0, " + height + " , " + width/2 + " " + height/2 + ", " + width + " , " + height);
-
-$("#middle").css("top",height/2 - document.getElementById("middle").height/2);
-$("#middle").css("left",width/2 - document.getElementById("middle").width/2);
-
+scale();
 
 var hovered;
 var before;
@@ -72,7 +58,7 @@ $("#middle").hover(
 $("#dj").hover(
     function(event) {
     	// The mouse has entered the element, can reference the element via 'this'
-    	$("#title").html("DJ");
+    	$("#title").html("Rap Romanesc");
     },
     function (event) {// The mouse has left the element, can reference the element via 'this' 
 	}
@@ -99,8 +85,28 @@ $("#eastCoast").hover(
 $("#trap").hover(
     function(event) {
     	// The mouse has entered the element, can reference the element via 'this'
-    	$("#title").html("Trap");
+    	$("#title").html("Rap Modern");
     },
     function (event) {// The mouse has left the element, can reference the element via 'this' 
 	}
  );
+
+$(window).on('resize', function(){
+    scale();
+});
+
+function scale(){
+height = window.innerHeight;
+width = window.innerWidth;
+$(".menuButton").width = width;
+$(".menuButton").height = height;
+document.getElementById("polyUp").setAttribute("points", "0, 0 " + width/2 + " " + height/2 + ", " + width + " ,0");
+document.getElementById("polyLeft").setAttribute("points", "0, 0 " + width/2 + " " + height/2 + ", 0 ," + height);
+document.getElementById("polyRight").setAttribute("points", width + ", 0 " + width/2 + " " + height/2 + ", " + width + " ," + height);
+document.getElementById("polyDown").setAttribute("points", "0, " + height + " , " + width/2 + " " + height/2 + ", " + width + " , " + height);
+$("#middle").css("width",10/100*(height+width)/2);
+$("#middle").css("height",10/100*(height+width)/2);
+$("#middle").css("top",height/2 - document.getElementById("middle").height/2);
+$("#middle").css("left",width/2 - document.getElementById("middle").width/2);
+$("#title").css("font-size",+(width+height)/24+"px");
+}
