@@ -7,10 +7,10 @@
 </head>
 <body bgcolor=#ffffff>
 	<div>
-		<img id="banner" src="../media/banner-west.png" width="100%">
+		<img id="banner" src="../media/controls/banner-west.png" width="100%">
 		<center>
 			<a href="../index.php">
-			<img id="home" src="../media/logo2.png" width="100" style="position:absolute;top:0px">
+			<img id="home" src="../media/controls/logo2.png" width="100" style="position:absolute;top:0px">
 		</a>
 		</center>
 	</div>
@@ -24,7 +24,7 @@
 	while($artist = mysqli_fetch_assoc($result)) {
 		echo '
 		<div style="float:right; padding-left: 100; padding-right: 25">
-		<img src="../media/'. trim($artist['poza']). '" width="400"';
+		<img src="../media/artists/'. trim($artist['poza']). '" width="400"';
 ?>
 <br>
 <table style="width: 100%; border: 1px solid black;">
@@ -85,7 +85,7 @@
 		$resultAlbum = mysqli_query($connection,$sqlAlbum);
 		while($album = mysqli_fetch_assoc($resultAlbum)){
 			echo '<div style="min-height:200px;">
-			<img src="../media/'. trim($album['cover']). '" height="200" style="float:left; padding-right: 100; padding-right: 25">
+			<img src="../media/covers/'. trim($album['cover']). '" height="200" style="float:left; padding-right: 100; padding-right: 25">
 			<p style=\'font-family: "Roboto-Black"; font-size: 20px; color:rgb(214, 47, 44);\'>' .$album['nume'] . ' (' . $album['an'] .')' .'</p>';
 			//Query songs
 			$sqlMelodie = 'SELECT * from melodii_west WHERE album_id ='. $album['id'];
@@ -105,6 +105,7 @@
 	}
 	mysqli_close($connection);
 	?>
+	<br>
 	</div>
 	<audio id="audio" controls style="position:fixed;bottom:0px; width: 100%; background: white;">
 		<source id="audioSrc" src="" type="audio/mpeg">
