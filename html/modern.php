@@ -1,7 +1,7 @@
 <html>
 <head>
 	 <meta charset="UTF8"> 
-	 <title>Rap Nodern</title>
+	 <title>Rap Modern</title>
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	 <link rel = "stylesheet" type = "text/css" href = "../css/rapCss.css"/>
 </head>
